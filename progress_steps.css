@@ -1,0 +1,88 @@
+:root {
+  --line-border-fill: #349adb;
+  --line-border-empty: #e0e0e0;
+}
+/* Styling for container containing progress step */
+.progress_container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+/* Styling for the Meter which moves as the next or previous button is clicked */
+.progress_meter {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+/* Styling for gray line which gets filled up by the blue meter */
+.progress_container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Styling for each individual step in the progress step */
+.progress_step {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e0e0e0;
+  transition: 0.4 ease;
+}
+/* Styling for active individual step */
+.progress_step.active_step {
+  border-color: #349adb;
+}
+
+/* Styling For Buttons */
+.prev_btn,
+.next_btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+/* Styling for button when clicked  */
+.prev_btn:active,
+.next_btn:active {
+  transform: scale(0.98);
+}
+
+/* Stling for Button on focus */
+.prev_btn:focus,
+.next_btn:focus {
+  outline: 0;
+}
+
+/* Styling for Button when disabled */
+.prev_btn:disabled,
+.next_btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
