@@ -24,7 +24,7 @@ body {
   text-align: center;
 }
 .progress_container {
-  /*   margin-bottom: 30px; */
+  margin-bottom: 30px;
   max-width: 100%;
-  /*   width: 350px; */
+  width: 350px;
 }
